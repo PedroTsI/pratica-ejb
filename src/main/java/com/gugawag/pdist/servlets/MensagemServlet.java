@@ -32,8 +32,13 @@ public class MensagemServlet extends HttpServlet {
                 for(Mensagem mensagem: mensagemService.listar()){
                     resposta.println(mensagem.getTexto());
                 }
-                break;
             }
+            case "3": {
+                long id = Integer.parseInt(request.getParameter("id"));
+                Mensagem mensagem = mensagemService.pesquisarPorId(id);
+                resposta.println(mensagem.getTexto());
+            }
+            break;
         }
     }
 }

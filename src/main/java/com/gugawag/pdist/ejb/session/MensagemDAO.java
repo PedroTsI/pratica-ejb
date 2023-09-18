@@ -17,6 +17,6 @@ public class MensagemDAO {
 
     public List<Mensagem> listar(){ return em.createQuery("SELECT u FROM tb_mensagem_pdist u").getResultList();}
 
-//    public List<Mensagem> pesquisarPorId(long id){return "Continuar"}
+    public Mensagem pesquisarPorId(long id){return (Mensagem) em.createQuery("SELECT m FROM tb_mensagem_pdist m WHERE m.id = " +id).getResultList().get(0);}
 
 }

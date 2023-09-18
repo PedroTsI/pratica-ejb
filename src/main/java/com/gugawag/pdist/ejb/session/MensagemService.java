@@ -18,4 +18,8 @@ public class MensagemService {
         Mensagem novaMensagem = new Mensagem(id, texto);
         mensagemDAO.inserirMSG(novaMensagem);
     }
+
+    public Mensagem pesquisarPorId(long id){
+        return this.mensagemDAO.pesquisarPorId(id);
+    }
 }
